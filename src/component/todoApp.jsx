@@ -13,15 +13,16 @@ const TodoApp = () => {
   const storeItems = (event) => {
     event.preventDefault();
     const allItems = [...todoList];
-    if (todoList === inputValue || inputValue == "") {
-      return false
+    const trimmedValue = inputValue.trim();
+    if (trimmedValue === '' || todoList.includes(trimmedValue)) {
+      return false;
     }
     allItems.push(inputValue);
     setTodoList(allItems);
     setInputValue('');
   };
 
-  const deleteItem = (index)=>{
+  const deleteItem = (index)=>{ 
     const allItems = [...todoList];
     allItems.splice(index,1)
     setTodoList(allItems);
