@@ -64,3 +64,7 @@ ul li i{
     cursor: pointer;
 
 }
+span{
+    position: fixed;
+    margin-left:150px
+}
