@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './TodoApp.css';
+import {FaEdit} from 'react-icons/fa';
+import {MdOutlineDone, MdOutlineRemoveDone, MdDeleteOutline} from 'react-icons/md';
 
 const TodoApp = () => {
   const [inputValue, setInputValue] = useState('');
@@ -81,13 +83,13 @@ const TodoApp = () => {
               <span>{data}</span>
               <div className='buttons'>
                 <i>
-                  <box-icon type='solid' title='Delete' name='trash-alt' onClick={() => deleteItem(index)}></box-icon>
+                  <button type='solid' title='Delete' name='trash-alt' onClick={() => deleteItem(index)}><MdDeleteOutline/></button>
                 </i>
                 <i>
-                  <box-icon type='solid' title='Edit' name='edit' onClick={() => editItem(index)}></box-icon>
+                  <button type='solid' title='Edit' name='edit' onClick={() => editItem(index)}><FaEdit/></button>
                 </i>
                 <i>
-                  <box-icon type='solid' title='Complete' name='check-square' onClick={() => completeItem(index)}></box-icon>
+                  <button type='solid' title='Complete' name='check-square' onClick={() => completeItem(index)}><MdOutlineDone/></button>
                 </i>
               </div>
             </li>
@@ -101,7 +103,7 @@ const TodoApp = () => {
                 <li key={index}>
                   {data}
                   <i>
-                    <box-icon type='solid' title='Uncomplete' name='up-arrow-alt' onClick={() => uncompleteItem(index)}></box-icon>
+                    <button type='solid' title='Uncomplete' name='up-arrow-alt' onClick={() => uncompleteItem(index)}><MdOutlineRemoveDone/></button>
                   </i>
                 </li>
               ))}
